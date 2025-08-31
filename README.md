@@ -108,6 +108,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Mehedi Hasan - [mehedihasan11023@gmail.com](mailto:mehedihasan11023@gmail.com)
+Mehedi Hasan - [mehedi.hasan11023@gmail.com](mailto:mehedi.hasan11023@gmail.com)
 
 Project Link: [https://github.com/mehedi-hasan1102/ZoomCommerce-Client](https://github.com/mehedi-hasan1102/ZoomCommerce-Client)
