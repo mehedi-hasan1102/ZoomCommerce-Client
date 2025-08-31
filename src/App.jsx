@@ -20,12 +20,14 @@ import Users from './pages/Dashboard/Users';
 import DashboardProducts from './pages/Dashboard/Products';
 import Orders from './pages/Dashboard/Orders';
 import ProtectedRoute from './components/ProtectedRoute';
+import BackToTopButton from './components/BackToTopButton';
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Navbar />
+        <BackToTopButton />
         <ToastContainer />
         <Routes>
           <Route path="/" element={<Home />} />
