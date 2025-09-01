@@ -1,26 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import women from '../assets/feature/Feature1.jpg';
-import men from '../assets/feature/Feature2.jpg';
-import kids from '../assets/feature/Feature3.jpg';
-
 const products = [
   {
     name: 'Men’s Leather Jacket',
-    img: men,
+    img: 'https://i.ibb.co/HLtCJ8VG/Feature2.jpg',
     price: '$120',
     link: '/product/mens-leather-jacket',
   },
   {
     name: 'Women’s Summer Dress',
-    img: women,
+    img: 'https://i.ibb.co/vxBgmd0d/Feature1.jpg',
     price: '$89',
     link: '/product/womens-summer-dress',
   },
   {
     name: 'Baby Romper',
-    img: kids,
+    img: 'https://i.ibb.co/bgSXswqP/Feature3.jpg',
     price: '$39',
     link: '/product/baby-romper',
   },
@@ -43,7 +39,10 @@ const Products = () => {
             <div className="relative">
               <img
                 src={product.img}
+                srcSet={`${product.img}?w=400 400w, ${product.img}?w=800 800w`}
+                sizes="(max-width: 640px) 400px, 800px"
                 alt={product.name}
+                loading="lazy"
                 className="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500"
               />
             </div>

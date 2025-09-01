@@ -1,24 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Men from '../assets/Catagory/Catagory3.jpg';
-import Women from '../assets/Catagory/Catagory1.jpg';
-import Kids from '../assets/Catagory/Catagory2.jpg';
 
 const categories = [
   {
     name: 'Men',
-    img: Men,
+    img: 'https://i.ibb.co/kVnYNXHC/Catagory3.jpg',
     link: '/category/men',
   },
   {
     name: 'Women',
-    img: Women,
+    img: 'https://i.ibb.co/Qv9sqJ8F/Catagory1.jpg',
     link: '/category/women',
   },
   {
     name: 'Kids',
-    img: Kids,
-    link: '/category/kids', // Fixed route name for consistency
+    img: 'https://i.ibb.co/bjXFqbx0/Catagory2.jpg',
+    link: '/category/kids',
   },
 ];
 
@@ -38,7 +35,10 @@ const HomeCategories = () => {
           >
             <img
               src={category.img}
+              srcSet={`${category.img}?w=400 400w, ${category.img}?w=800 800w`}
+              sizes="(max-width: 640px) 400px, 800px"
               alt={category.name}
+              loading="lazy"
               className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

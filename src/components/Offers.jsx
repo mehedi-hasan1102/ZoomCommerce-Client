@@ -1,31 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Correctly named imports
-import offerImg1 from '../assets/offers/offers1.jpg';
-import offerImg2 from '../assets/offers/offers2.jpg';
-import offerImg3 from '../assets/offers/offers3.jpg';
-
 const offers = [
   {
     title: 'End of Season Sale',
     description: 'Up to 70% off on premium fashion wear. Limited time only!',
-    img: offerImg1,
+    img: 'https://i.ibb.co/GfJkyXfY/offers1.jpg',
     link: '/sale',
   },
   {
     title: 'Buy 1 Get 1 Free',
     description: 'Trendy jackets, shirts & shoes – grab the hottest deal now.',
-    img: offerImg2,
+    img: 'https://i.ibb.co/8gw80sxm/offers2.jpg',
     link: '/category/fashion',
   },
   {
     title: 'Get Your Gift Box',
     description: 'Discover the latest styles in streetwear & luxury fashion.',
-    img: offerImg3,
+    img: 'https://i.ibb.co/DfZwk2Y5/offers3.png',
     link: '/new-arrivals',
   },
 ];
+
 const SpecialOffers = () => {
   return (
     <div className="py-12 px-4 md:px-12 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
@@ -43,7 +39,10 @@ const SpecialOffers = () => {
             <div className="relative">
               <img
                 src={offer.img}
+                srcSet={`${offer.img}?w=400 400w, ${offer.img}?w=800 800w`}
+                sizes="(max-width: 640px) 400px, 800px"
                 alt={offer.title}
+                loading="lazy"
                 className="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

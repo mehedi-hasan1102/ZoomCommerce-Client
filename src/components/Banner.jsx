@@ -6,38 +6,32 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { EffectFade, Navigation, Pagination, Autoplay, Keyboard } from 'swiper/modules';
 
-import hero1 from '../assets/banner/hero1.jpg';
-import hero2 from '../assets/banner/hero2.jpg';
-import hero3 from '../assets/banner/hero3.jpg';
-import hero4 from '../assets/banner/hero4.jpg';
-
-
 export default function HeroSlider() {
   const slides = [
-     {
-    img: hero1,
-    title: 'Mega Sale Up to 50% Off',
-    subtitle: 'Grab your favorite products before they run out!',
-    cta: 'Shop Now',
-  },
-  {
-    img: hero2,
-    title: 'New Arrivals for Fall 2025',
-    subtitle: 'Discover the latest trends and must-have items.',
-    cta: 'Explore',
-  },
-  {
-    img: hero3,
-    title: 'Best Sellers Collection',
-    subtitle: 'Our most loved products by customers worldwide.',
-    cta: 'Buy Now',
-  },
-  {
-    img: hero4,
-    title: 'Free Shipping on Orders Over $50',
-    subtitle: 'Shop more, save more, and enjoy free delivery.',
-    cta: 'Start Shopping',
-  },
+    {
+      img: 'https://i.ibb.co.com/RpbRH2Xh/hero1.jpg',
+      title: 'Mega Sale Up to 50% Off',
+      subtitle: 'Grab your favorite products before they run out!',
+      cta: 'Shop Now',
+    },
+    {
+      img: 'https://i.ibb.co.com/jvj91sLn/hero2.jpg',
+      title: 'New Arrivals for Fall 2025',
+      subtitle: 'Discover the latest trends and must-have items.',
+      cta: 'Explore',
+    },
+    {
+      img: 'https://i.ibb.co.com/y35ps9B/hero3.jpg',
+      title: 'Best Sellers Collection',
+      subtitle: 'Our most loved products by customers worldwide.',
+      cta: 'Buy Now',
+    },
+    {
+      img: 'https://i.ibb.co.com/QW16p0g/hero4.jpg',
+      title: 'Free Shipping on Orders Over $50',
+      subtitle: 'Shop more, save more, and enjoy free delivery.',
+      cta: 'Start Shopping',
+    },
   ];
 
   return (
@@ -57,9 +51,11 @@ export default function HeroSlider() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full h-[60vh] md:h-[80vh]">
+            <div className="relative w-full h-[60vh] md:h-[80vh] bg-gray-200 dark:bg-gray-800">
               <img
                 src={slide.img}
+                srcSet={`${slide.img}?w=800 800w, ${slide.img}?w=1600 1600w`}
+                sizes="(max-width: 768px) 800px, 1600px"
                 alt={slide.title}
                 loading="lazy"
                 className="w-full h-full object-cover object-center transition-transform duration-700 ease-in-out scale-100 hover:scale-105"
